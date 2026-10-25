@@ -1,0 +1,86 @@
+IES - SISTEMA DE ASISTENCIA LOCAL
+
+REQUISITOS
+- Windows 10/11
+- Python 3.11 o superior con pip
+- Node.js 20.19+ o 22.12+
+- Internet solo durante la primera instalación para descargar dependencias.
+
+INSTALACIÓN (SOLO LA PRIMERA VEZ)
+1. Descomprimir esta carpeta completa.
+2. Ejecutar INSTALAR_SISTEMA.bat.
+3. Esperar el mensaje INSTALACION TERMINADA CORRECTAMENTE.
+
+INICIO
+Ejecutar INICIAR_SISTEMA.bat.
+
+DIRECCIONES
+- Administración: http://localhost:5173
+- Registro de Asistencia: http://localhost:5174
+- API: http://localhost:8000
+- Swagger: http://localhost:8000/docs
+
+CELULARES Y TABLETS
+Si están conectados a la misma red Wi-Fi que la PC, usar la IP local que muestra INICIAR_SISTEMA.bat.
+
+BASE DE DATOS
+La base local se encuentra en:
+attendance_api-real\attendance_api\asistencia.db
+
+RESPALDO
+Ejecutar RESPALDAR_BASE.bat para crear una copia de la base.
+
+NOTA
+No se incluyen node_modules ni un entorno virtual de Python en la entrega. El instalador los prepara automáticamente.
+
+FUNCIONES NUEVAS DE LA ENTREGA
+- Inasistencias: permite registrar una inasistencia justificada con docente, cátedra, curso, turno, día y observación. El historial de inasistencias no se modifica desde la interfaz y puede imprimirse o guardarse como PDF.
+- Informes: distingue presentes, sin registro, inasistencias, feriados y fines de semana. En feriados muestra el motivo configurado en el calendario.
+- Papelera: la eliminación de personal es una baja lógica (activo = 0). El registro y su historial se conservan y puede reactivarse desde Administración > Papelera.
+- Seguridad: las contraseñas se almacenan mediante PBKDF2-SHA256 con salt y no se devuelven en las respuestas de la API. El frontend no guarda contraseñas ni muestra el resultado del login en consola.
+
+ACCESO ADMINISTRATIVO
+- Usuario inicial: admin
+- Contraseña inicial: Admin123!
+- Desde Administración > Administradores se pueden crear o editar usuarios administradores.
+- Se permiten como máximo 3 administradores activos.
+- El sistema exige que permanezca al menos 1 administrador activo.
+- La contraseña puede mostrarse u ocultarse con el botón del ojo en el acceso y en el formulario de administrador.
+
+
+MEJORAS DE SEGURIDAD Y CONTROL
+- Perfiles administrativos: Administrador principal, Solo lectura y Edición limitada.
+- Los permisos se verifican en la API, no solamente en los botones de la interfaz.
+- Las sesiones expiran luego de 8 horas; las operaciones administrativas requieren sesión.
+- El personal autenticado solo puede consultar su perfil y sus propias asistencias.
+- En el acceso al sistema, cada usuario debe marcar la aceptación de las condiciones de uso y comprometerse a no compartir sus credenciales ni permitir que otra persona fiche en su nombre.
+- Las contraseñas nuevas deben tener al menos 10 caracteres, mayúscula, minúscula, número y símbolo.
+- La base activa tiene claves foráneas verificadas y se crea una copia `asistencia.pre_seguridad.db` antes de la primera migración de esta versión.
+
+MATERIAS Y PORCENTAJES
+- Las materias permiten guardar hora de inicio y fin. Es un dato informativo: el fichaje no se bloquea fuera de ese horario.
+- Informes > Porcentaje de asistencia por período permite consultar la semana actual, el mes actual o un rango personalizado, con asistencias, faltas y justificadas.
+- Inasistencias incluye opciones de motivo (enfermedad, licencia médica, licencia personal, trámite, familiar, fuerza mayor u otro) además de la observación.
+- En la interfaz, “Personal” identifica al personal no docente.
+
+IMPORTANTE
+- Cambiá la contraseña inicial `Admin123!` luego del primer acceso.
+- Las sesiones se almacenan en memoria: si se reinicia el backend, los usuarios deben volver a iniciar sesión.
+- La casilla de condiciones es una declaración de responsabilidad, no un CAPTCHA ni una verificación de identidad; para evitar suplantaciones se requieren controles adicionales y no compartir credenciales.
+
+
+VERIFICACIÓN
+Consultá INFORME_VERIFICACION_TECNICA.txt para conocer las pruebas ejecutadas y las verificaciones pendientes antes de la presentación oficial.
+
+
+ACTUALIZACIÓN DE CONTRASEÑAS (versión corregida)
+- Para registrar docentes o personal, la contraseña requiere mínimo 6 caracteres, al menos una letra y un número. Ejemplo: Flor123.
+- Ya no exige símbolo ni mayúscula obligatoria.
+- En el formulario de personal hay un control para mostrar/ocultar la contraseña.
+- Los avisos y errores de la interfaz se muestran como notificaciones emergentes.
+
+
+INASISTENCIAS SEMANALES
+La sección Inasistencias muestra jornadas asignadas sin fichaje desde el lunes hasta hoy. Al llegar el sábado o domingo, siguen apareciendo las jornadas pendientes de los días anteriores de esa semana. La fecha de la jornada se muestra como dato fijo; para registrar la inasistencia se requiere marcar la confirmación, elegir un motivo y completar la observación.
+
+Si modificaste archivos o es la primera ejecución en otra computadora, dentro de ies-administrativo ejecutá: npm ci y luego npm run build.

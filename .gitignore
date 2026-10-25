@@ -1,0 +1,30 @@
+﻿# Dependencias
+**/node_modules/
+
+# Variables de entorno y secretos
+**/.env
+**/.env.*
+!**/.env.example
+
+# Bases de datos locales
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.db-journal
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/.venv/
+**/venv/
+
+# Archivos temporales y registros
+**/*.log
+**/npm-debug.log*
+**/.DS_Store
+**/Thumbs.db
+
+# Compilaciones
+**/dist/
+**/build/
+**/coverage/

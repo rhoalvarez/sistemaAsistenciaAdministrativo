@@ -1,0 +1,875 @@
+/* =========================================================
+   LOGIN
+   DISEÑO INSTITUCIONAL
+========================================================= */
+
+.login-container {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 25px 20px;
+
+  box-sizing: border-box;
+
+  background: #f3f6f9;
+}
+
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
+.login-card {
+  width: 100%;
+
+  max-width: 570px;
+
+  padding: 40px 50px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #d8e0e7;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 30px rgba(22, 55, 82, 0.09);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-ies {
+  width: 155px;
+
+  height: 155px;
+
+  object-fit: contain;
+
+  display: block;
+
+  margin: 0 auto 10px;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.login-header {
+  text-align: center;
+
+  margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   ETIQUETA
+========================================================= */
+
+.login-etiqueta {
+  margin: 0 0 9px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  color: #718391;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.login-card h1 {
+  margin: 0 0 9px;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  color: #173b5c;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.login-subtitulo {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.4;
+
+  color: #6b7e8c;
+}
+
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+.login-form {
+  width: 100%;
+}
+
+
+/* =========================================================
+   GRUPOS
+========================================================= */
+
+.form-group {
+  width: 100%;
+
+  margin-bottom: 21px;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  color: #294c66;
+}
+
+
+/* =========================================================
+   INPUT USUARIO
+========================================================= */
+
+.input-icon-container {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.input-icon-container input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  min-height: 48px;
+
+  padding: 13px 16px 13px 47px;
+
+  border: 1px solid #cbd7df;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #294c66;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.input-icon-container input::placeholder {
+  color: #9aa8b2;
+}
+.input-icon-container input:focus {
+  border-color: #245a84;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 90, 132, 0.11);
+}
+
+.input-icon-container input:disabled {
+  background: #f3f6f8;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ICONOS
+========================================================= */
+
+.input-icon {
+  position: absolute;
+
+  left: 15px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #667c8c;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.input-icon svg {
+  width: 20px;
+
+  height: 20px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   CONTRASEÑA
+========================================================= */
+
+.password-container {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  min-height: 48px;
+
+  padding: 13px 58px 13px 47px;
+
+  border: 1px solid #cbd7df;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #294c66;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.password-container input::placeholder {
+  color: #9aa8b2;
+}
+.password-container input:focus {
+  border-color: #245a84;
+
+  box-shadow:
+    0 0 0 3px rgba(36, 90, 132, 0.11);
+}
+
+.password-container input:disabled {
+  background: #f3f6f8;
+
+  cursor: not-allowed;
+}
+
+.password-container .input-icon {
+  left: 15px;
+}
+
+
+/* =========================================================
+   BOTÓN MOSTRAR CONTRASEÑA
+========================================================= */
+
+.boton-mostrar {
+  position: absolute;
+  z-index: 3;
+
+  right: 6px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 38px;
+
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #667c8c;
+
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.boton-mostrar svg {
+  width: 20px;
+
+  height: 20px;
+}
+.boton-mostrar:focus-visible {
+  outline: 2px solid #245a84;
+
+  outline-offset: 2px;
+}
+
+.boton-mostrar:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   ERRORES
+========================================================= */
+
+.mensaje-error {
+  margin: 7px 0 0;
+
+  padding-left: 2px;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  color: #a34848;
+}
+
+
+/* =========================================================
+   BOTÓN INGRESAR
+========================================================= */
+
+.boton-ingresar {
+  width: 100%;
+
+  min-height: 49px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 13px 16px;
+
+  margin-top: 7px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #245a84;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+.boton-ingresar:focus-visible {
+  outline: 2px solid #245a84;
+
+  outline-offset: 3px;
+}
+
+.boton-ingresar:disabled {
+  background: #aebbc5;
+
+  color: #ffffff;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+.flecha-login {
+  font-size: 20px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.spinner {
+  width: 16px;
+
+  height: 16px;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation: girar 0.7s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SEGURIDAD
+========================================================= */
+
+.seguridad {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  width: 100%;
+
+  max-width: 570px;
+
+  margin-top: 17px;
+
+  padding: 0 8px;
+
+  box-sizing: border-box;
+
+  color: #718391;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+.seguridad svg {
+  width: 18px;
+
+  height: 18px;
+
+  flex-shrink: 0;
+
+  color: #245a84;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .login-container {
+    padding: 25px 18px;
+  }
+
+  .login-card {
+    max-width: 540px;
+
+    padding: 36px 40px;
+  }
+
+  .logo-ies {
+    width: 140px;
+
+    height: 140px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-container {
+    min-height: 100vh;
+
+    padding: 15px 10px;
+  }
+
+  .login-card {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 28px 18px;
+
+    border-radius: 15px;
+  }
+
+  .logo-ies {
+    width: 110px;
+
+    height: 110px;
+
+    margin-bottom: 8px;
+  }
+
+  .login-header {
+    margin-bottom: 25px;
+  }
+
+  .login-etiqueta {
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .login-card h1 {
+    font-size: 23px;
+
+    margin-bottom: 8px;
+  }
+
+  .login-subtitulo {
+    font-size: 13px;
+  }
+
+  .form-group {
+    margin-bottom: 17px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+
+    margin-bottom: 7px;
+  }
+
+  .input-icon-container input,
+  .password-container input {
+    min-height: 46px;
+
+    font-size: 15px;
+  }
+
+  .input-icon {
+    left: 14px;
+  }
+
+  .password-container .input-icon {
+    left: 14px;
+  }
+
+  .input-icon svg {
+    width: 19px;
+
+    height: 19px;
+  }
+
+  .boton-mostrar {
+    width: 35px;
+
+    height: 35px;
+
+    right: 5px;
+  }
+
+  .boton-mostrar svg {
+    width: 19px;
+
+    height: 19px;
+  }
+
+  .mensaje-error {
+    font-size: 12px;
+  }
+
+  .boton-ingresar {
+    min-height: 46px;
+
+    font-size: 15px;
+  }
+
+  .seguridad {
+    font-size: 11px;
+
+    margin-top: 14px;
+  }
+
+  .seguridad svg {
+    width: 17px;
+
+    height: 17px;
+  }
+
+}
+
+
+/* =========================================================
+   CELULAR MUY PEQUEÑO
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .login-container {
+    padding: 10px 7px;
+  }
+
+  .login-card {
+    padding: 23px 13px;
+
+    border-radius: 13px;
+  }
+
+  .logo-ies {
+    width: 95px;
+
+    height: 95px;
+  }
+
+  .login-card h1 {
+    font-size: 21px;
+  }
+
+  .login-subtitulo {
+    font-size: 12px;
+  }
+
+  .input-icon-container input,
+  .password-container input {
+    font-size: 14px;
+
+    min-height: 44px;
+
+    padding-top: 11px;
+
+    padding-bottom: 11px;
+  }
+
+  .boton-ingresar {
+    min-height: 44px;
+
+    font-size: 14px;
+  }
+
+  .seguridad {
+    font-size: 10px;
+  }
+
+}
+/* Ajuste final de legibilidad y pantallas pequeñas */
+.login-card h1 {
+  color: #123b5d;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #123b5d;
+}
+
+.input-icon-container input,
+.password-container input {
+  color: #123b5d;
+  font-size: 16px;
+}
+
+.boton-ingresar {
+  min-height: 50px;
+  font-size: 16px;
+}
+
+.seguridad {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 24px 16px;
+  }
+
+  .login-card h1 {
+    font-size: 24px;
+  }
+
+  .login-subtitulo {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .form-group label {
+    font-size: 15px;
+  }
+
+  .input-icon-container input,
+  .password-container input {
+    min-height: 49px;
+    font-size: 15px;
+  }
+
+  .boton-ingresar {
+    min-height: 49px;
+    font-size: 16px;
+  }
+
+  .seguridad {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   CONDICIONES DE USO Y COMPROMISO DE CREDENCIALES
+========================================================= */
+.condiciones-uso {
+  margin: 4px 0 18px;
+  padding: 14px 15px;
+  border: 1px solid #d7e1e8;
+  border-radius: 10px;
+  background: #f7fafc;
+}
+
+.condiciones-checkbox {
+  display: grid !important;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: start;
+  gap: 11px;
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.condiciones-checkbox input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.checkbox-visual {
+  display: inline-flex;
+  width: 21px;
+  height: 21px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  border: 2px solid #7890a1;
+  border-radius: 5px;
+  background: #fff;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.condiciones-checkbox input:checked + .checkbox-visual {
+  border-color: #245a84;
+  background: #245a84;
+}
+
+.condiciones-checkbox input:checked + .checkbox-visual::after {
+  content: "✓";
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.condiciones-checkbox input:focus-visible + .checkbox-visual {
+  outline: 3px solid rgba(36, 90, 132, .24);
+  outline-offset: 2px;
+}
+
+.condiciones-checkbox input:disabled + .checkbox-visual {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.condiciones-texto {
+  color: #294c66;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.condiciones-texto strong {
+  color: #173b5c;
+  font-weight: 750;
+}
+
+.condiciones-aclaracion {
+  margin: 10px 0 0 33px;
+  color: #6b7e8c;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  .condiciones-uso { padding: 12px; }
+  .condiciones-texto { font-size: 12px; }
+  .condiciones-aclaracion { margin-left: 0; font-size: 10px; }
+}

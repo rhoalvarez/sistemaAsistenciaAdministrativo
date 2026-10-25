@@ -1,0 +1,508 @@
+/* =========================================================
+   IES - REGISTRO DE ASISTENCIA
+   ESTILO INSTITUCIONAL GLOBAL
+   ========================================================= */
+
+:root {
+  --color-principal: #245b86;
+  --color-principal-oscuro: #1d4d73;
+  --color-principal-claro: #eaf2f7;
+
+  --color-texto: #123b5d;
+  --color-texto-secundario: #5d7890;
+
+  --color-fondo: #f3f7fa;
+  --color-blanco: #ffffff;
+
+  --color-borde: #cbdce8;
+  --color-borde-suave: #dce8ef;
+
+  --color-exito: #176b4d;
+  --color-exito-fondo: #edf8f2;
+  --color-exito-borde: #c7e5d5;
+
+  --color-error: #b42318;
+  --color-error-fondo: #fff3f1;
+  --color-error-borde: #f0c9c4;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--color-fondo);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   COLORES GENERALES DE TEXTOS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-texto);
+}
+
+p,
+span,
+small,
+label {
+  color: inherit;
+}
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+
+.inicio-container {
+  background-color: var(--color-fondo) !important;
+}
+
+.inicio-card {
+  background-color: var(--color-blanco) !important;
+  border-color: var(--color-borde) !important;
+}
+
+.inicio-card h1 {
+  color: var(--color-texto) !important;
+}
+
+.inicio-etiqueta {
+  color: var(--color-principal) !important;
+}
+
+.inicio-subtitulo {
+  color: var(--color-texto-secundario) !important;
+}
+
+.boton-iniciar {
+  background-color: var(--color-principal) !important;
+  color: #ffffff !important;
+}
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-container {
+  background-color: var(--color-fondo) !important;
+}
+
+.login-card {
+  background-color: var(--color-blanco) !important;
+  border-color: var(--color-borde) !important;
+}
+
+.login-card h1,
+.login-card h2 {
+  color: var(--color-texto) !important;
+}
+
+.login-card label {
+  color: var(--color-texto) !important;
+}
+
+.input-icon {
+  color: var(--color-principal) !important;
+}
+
+.input-icon-container,
+.password-container {
+  border-color: var(--color-borde) !important;
+}
+
+.input-icon-container:focus-within,
+.password-container:focus-within {
+  border-color: var(--color-principal) !important;
+  box-shadow: 0 0 0 3px rgba(36, 91, 134, 0.12) !important;
+}
+
+.boton-mostrar {
+  color: var(--color-principal) !important;
+}
+
+.boton-ingresar {
+  background-color: var(--color-principal) !important;
+  color: #ffffff !important;
+}
+.boton-ingresar:disabled {
+  background-color: #aebdca !important;
+  color: #ffffff !important;
+}
+
+.seguridad {
+  color: var(--color-texto-secundario) !important;
+}
+
+.mensaje-error {
+  color: var(--color-error) !important;
+}
+
+/* =========================================================
+   SELECCIÓN
+   ========================================================= */
+
+.seleccion-container {
+  background-color: var(--color-fondo) !important;
+}
+
+.seleccion-card {
+  background-color: var(--color-blanco) !important;
+  border-color: var(--color-borde) !important;
+}
+
+.seleccion-card h1 {
+  color: var(--color-texto) !important;
+}
+
+.seleccion-etiqueta {
+  color: var(--color-principal) !important;
+}
+
+.bienvenida {
+  color: var(--color-texto-secundario) !important;
+}
+
+.bienvenida strong {
+  color: var(--color-principal) !important;
+}
+
+.icono-seleccion {
+  color: var(--color-principal) !important;
+}
+
+.dia-actual {
+  color: var(--color-principal) !important;
+}
+
+.dia-icono {
+  color: var(--color-principal) !important;
+}
+
+.seleccion-form-group label {
+  color: var(--color-texto) !important;
+}
+
+.select-container {
+  border-color: var(--color-borde) !important;
+}
+
+.select-container:focus-within {
+  border-color: var(--color-principal) !important;
+  box-shadow: 0 0 0 3px rgba(36, 91, 134, 0.12) !important;
+}
+
+.select-icon {
+  color: var(--color-principal) !important;
+}
+
+.select-container select {
+  color: var(--color-texto) !important;
+}
+
+.clase-seleccionada {
+  background-color: var(--color-principal-claro) !important;
+  border-color: var(--color-borde) !important;
+}
+
+.clase-check {
+  background-color: var(--color-principal) !important;
+  color: #ffffff !important;
+}
+
+.clase-seleccionada strong {
+  color: var(--color-texto) !important;
+}
+
+.clase-seleccionada span {
+  color: var(--color-texto-secundario) !important;
+}
+
+.boton-continuar {
+  background-color: var(--color-principal) !important;
+  color: #ffffff !important;
+}
+.boton-continuar:focus-visible {
+  outline-color: var(--color-principal) !important;
+}
+
+.boton-continuar:disabled {
+  background-color: #aebdca !important;
+  color: #ffffff !important;
+}
+
+.sin-clases,
+.estado-seleccion {
+  background-color: #f4f8fb !important;
+  border-color: var(--color-borde) !important;
+}
+
+.sin-clases strong,
+.estado-seleccion strong {
+  color: var(--color-texto) !important;
+}
+
+.sin-clases p,
+.estado-seleccion p {
+  color: var(--color-texto-secundario) !important;
+}
+
+.boton-volver-inicio {
+  background-color: #ffffff !important;
+  border-color: var(--color-borde) !important;
+  color: var(--color-principal) !important;
+}
+/* =========================================================
+   ASISTENCIA
+   ========================================================= */
+
+.asistencia-container {
+  background-color: var(--color-fondo) !important;
+}
+
+.asistencia-card {
+  background-color: var(--color-blanco) !important;
+  border-color: var(--color-borde) !important;
+}
+
+.asistencia-card h1 {
+  color: var(--color-texto) !important;
+}
+
+.asistencia-seccion {
+  color: var(--color-principal) !important;
+}
+
+.reloj {
+  background-color: #f4f8fb !important;
+  border-color: var(--color-borde) !important;
+}
+
+.reloj strong {
+  color: var(--color-principal) !important;
+}
+
+.reloj span {
+  color: var(--color-texto) !important;
+}
+
+.reloj small {
+  color: var(--color-texto-secundario) !important;
+}
+
+.datos-clase {
+  background-color: #f8fafc !important;
+  border-color: var(--color-borde) !important;
+}
+
+.datos-clase p {
+  color: var(--color-texto-secundario) !important;
+}
+
+.datos-clase strong {
+  color: var(--color-texto) !important;
+}
+
+.registro-item {
+  background-color: var(--color-blanco) !important;
+  border-color: var(--color-borde) !important;
+}
+
+.registro-item h2 {
+  color: var(--color-texto) !important;
+}
+
+.registro-item > p {
+  color: var(--color-principal) !important;
+}
+
+.registro-item button {
+  background-color: var(--color-principal) !important;
+  color: #ffffff !important;
+}
+.registro-item button:disabled {
+  background-color: #aebdca !important;
+}
+
+.mensaje-exito {
+  background-color: var(--color-exito-fondo) !important;
+  border-color: var(--color-exito-borde) !important;
+  color: var(--color-exito) !important;
+}
+
+.mensaje-exito p {
+  color: var(--color-exito) !important;
+}
+
+.cuenta-regresiva {
+  color: var(--color-texto-secundario) !important;
+}
+
+.cuenta-regresiva strong {
+  color: var(--color-principal) !important;
+}
+
+.asistencia-acciones {
+  border-color: var(--color-borde) !important;
+}
+
+.boton-secundario,
+.boton-inicio {
+  border-color: var(--color-borde) !important;
+  color: var(--color-principal) !important;
+  background-color: #ffffff !important;
+}
+/* =========================================================
+   ELEMENTOS CON COLOR MORADO QUE PUEDAN HABER QUEDADO
+   ========================================================= */
+
+[style*="#6b46a5"],
+[style*="#68439c"],
+[style*="#563788"],
+[style*="#34244f"],
+[style*="#5b3f8c"],
+[style*="#4f3973"],
+[style*="#4f3b70"] {
+  color: var(--color-texto) !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .inicio-container,
+  .login-container,
+  .seleccion-container,
+  .asistencia-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  body {
+    min-width: 320px;
+  }
+}
+/* Legibilidad global */
+button,
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   ACCIONES CONVENCIONALES / ACCESIBILIDAD TÁCTIL
+   ========================================================= */
+button {
+  touch-action: manipulation;
+  min-height: 44px;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(36, 91, 134, .22);
+  outline-offset: 2px;
+}
+
+.boton-principal {
+  background-color: var(--color-exito) !important;
+  border-color: var(--color-exito) !important;
+  color: #fff !important;
+}
+
+.boton-secundario,
+.boton-volver-inicio,
+.boton-inicio {
+  background-color: #fff !important;
+  border-color: var(--color-borde) !important;
+  color: var(--color-texto) !important;
+}
+
+.boton-ingresar,
+.boton-continuar,
+.boton-iniciar {
+  background-color: var(--color-principal) !important;
+  border-color: var(--color-principal) !important;
+  color: #fff !important;
+}
+
+.boton-mostrar {
+  background: transparent !important;
+  color: var(--color-texto-secundario) !important;
+  border: 0 !important;
+}
+
+
+.boton-entrada {
+  background-color: var(--color-exito) !important;
+  border-color: var(--color-exito) !important;
+}
+
+.boton-salida {
+  background-color: #9a6700 !important;
+  border-color: #9a6700 !important;
+  color: #fff !important;
+}

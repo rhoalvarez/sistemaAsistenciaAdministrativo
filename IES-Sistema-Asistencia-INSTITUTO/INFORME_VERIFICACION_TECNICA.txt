@@ -1,0 +1,60 @@
+INFORME DE VERIFICACIÓN TÉCNICA — SISTEMA DE ASISTENCIA IES
+Revisión: 25/10/2026
+
+CAMBIOS APLICADOS
+- Se retiró la sección de Auditoría de la interfaz y la ruta API; no aparece en la navegación administrativa.
+- Se quitó el aviso redundante de sesión con la etiqueta “Control total”. En la gestión de administradores se usan etiquetas más claras.
+- La pantalla académica ahora muestra las carreras registradas y permite filtrar las materias por carrera.
+- En la asignación de materias a docentes se debe elegir primero una carrera; el selector de materia solo muestra materias de esa carrera.
+- La API rechaza crear una materia sin carrera en vez de asignarla silenciosamente a la carrera 1.
+- Inasistencias permite consultar una fecha pasada (no futura), confirmar mediante casilla que el docente no asistió, seleccionar el motivo y exigir una observación antes de registrar.
+- La búsqueda del informe individual selecciona automáticamente a la persona cuando hay una única coincidencia.
+- Se mejoró la distribución de formularios e informes en escritorio y móvil.
+- Los errores de validación de FastAPI/Pydantic se transforman en mensajes legibles; las contraseñas nuevas se validan antes de enviar el formulario.
+
+PRUEBAS EJECUTADAS EN ESTA REVISIÓN
+- Sintaxis Python: compilación de todos los módulos de la API sin errores.
+- Sintaxis JS/JSX: 19 de 19 archivos analizados con Babel Parser, sin errores de sintaxis.
+- API en una copia aislada de la base: 18 de 18 comprobaciones aprobadas.
+  * API raíz: HTTP 200.
+  * Lecturas administrativas sin sesión: HTTP 401.
+  * Inicio de sesión de administrador: HTTP 200.
+  * Carreras, materias, docentes y asistencias: HTTP 200.
+  * Inasistencias por período y pendientes para fecha elegida: HTTP 200.
+  * Asignaciones de materias: HTTP 200.
+  * Crear materia sin carrera: rechazado con HTTP 400 y mensaje claro.
+  * Crear materia con carrera válida: HTTP 201 y relación id_carrera preservada.
+  * Ruta de Auditoría: retirada (HTTP 404); la API ya no crea la tabla en bases nuevas.
+  * Preflight CORS: aprobado.
+- Base SQLite incluida: PRAGMA integrity_check = ok; PRAGMA foreign_key_check sin resultados.
+- La base usada para pruebas de API fue una copia temporal; las operaciones de prueba no alteraron la base incluida.
+
+LÍMITE DE VERIFICACIÓN
+No se pudo completar `npm run build` en este entorno Linux porque el paquete Vite/Rolldown no tenía disponible su binding nativo para Linux. La sintaxis JS/JSX sí pasó. El instalador del proyecto descarga las dependencias adecuadas para Windows; por eso la compilación final debe confirmarse en la PC de presentación después de ejecutar INSTALAR_SISTEMA.bat. No sería correcto afirmar que se hizo una prueba visual completa en el navegador de destino desde este entorno.
+
+PRUEBA FINAL EN LA PC DE PRESENTACIÓN
+1. Hacer una copia de la carpeta y de asistencia.db antes de iniciar.
+2. Ejecutar INSTALAR_SISTEMA.bat y esperar el mensaje de instalación correcta.
+3. Ejecutar INICIAR_SISTEMA.bat; no cerrar las ventanas de API y Vite mientras se presenta.
+4. Probar: alta/edición de docente y personal; alta de carrera y materias; asignación de docente con filtro por carrera; entrada y salida desde Registro de Asistencia; consulta de inasistencias en un día laborable con ausencia pendiente; casilla de confirmación y observación obligatoria; informe individual y porcentaje por período; papelera y administración.
+5. Para probar una inasistencia, usar una fecha laborable anterior o actual en la que exista una asignación activa y no haya fichaje ni justificación previa. En sábado, domingo o feriado el sistema no debe ofrecer faltas automáticas.
+
+DATOS ACTUALES DE LA BASE INCLUIDA
+La base contiene 3 carreras activas, 4 materias activas, 4 docentes, 1 persona no docente y 13 registros de asistencia. Las carreras nuevas deben registrarse desde Materias > Nueva carrera; no se agregaron carreras ni asignaturas ficticias durante esta corrección.
+
+
+CAMBIOS ADICIONALES DE ESTA ENTREGA
+- Política de contraseña sincronizada entre frontend y API: 6 caracteres como mínimo, una letra y un número.
+- Campo de contraseña de personal con mostrar/ocultar.
+- Errores de alta y validación convertidos a notificaciones emergentes para que no queden ocultos detrás del modal.
+- Validación sintáctica de los módulos Python completada con compileall.
+- La compilación Vite debe ejecutarse en Windows tras instalar dependencias; este entorno no tiene node_modules instalados.
+
+
+CAMBIOS ADICIONALES — INASISTENCIAS Y CONTRASEÑA (25/10/2026)
+- El botón Ver/Ocultar del formulario de personal queda dentro del campo, con fondo, tamaño y alineación propios.
+- La pantalla Inasistencias consulta las asignaciones desde el lunes de la semana actual hasta la fecha de hoy; no incluye días futuros para evitar falsos pendientes.
+- Las jornadas que quedaron sin fichaje se mantienen pendientes aunque el usuario consulte el sistema el sábado o domingo. La fecha de cada jornada se toma de la asignación y no se edita en el formulario.
+- Cada pendiente permite confirmar mediante checklist, elegir el motivo y escribir observaciones antes de registrarlo.
+- Los días feriados se muestran informados y no generan pendientes automáticos.
+- Verificación realizada en esta sesión: compilación sintáctica de los módulos Python con compileall. No se pudo ejecutar el build de React en este entorno porque la instalación local de dependencias no terminó; ejecutar npm ci y npm run build en la carpeta ies-administrativo antes de publicar.
